@@ -1,4 +1,8 @@
 public class Analyzer {
+    public Analyzer()
+    {
+        init_commands();
+    }
     final String CONF = "cmd.conf";
     private Command[] commands;
     private String[] git_lines(){

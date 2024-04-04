@@ -3,7 +3,7 @@ public class Compilor {
     {
 
     }
-    private void invoke_command(String cmd){
-        
+    private void invoke_command(String bash){
+
     }
 }
