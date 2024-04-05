@@ -10,7 +10,8 @@ public class Main {
         while (true) {
             System.out.print("Enter a command> ");
             String comnd = get_f_arg();
-            System.out.println(comnd);
+            Compilor.handle_command(comnd);
+
         }
 
 
