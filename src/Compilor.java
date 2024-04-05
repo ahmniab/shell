@@ -3,7 +3,7 @@ public class Compilor {
     {
         System.out.println(cmd);
     }
-    private void invoke_command(String bash){
+    private static void invoke_command(String bash){
 
     }
 }
