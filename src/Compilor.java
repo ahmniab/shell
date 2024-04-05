@@ -26,7 +26,7 @@ public abstract class Compilor {
             }
 
             int exitCode = process.waitFor();
-            System.out.println("\nExited with error code : " + exitCode);
+//            System.out.println("\nExited with error code : " + exitCode);
 
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
