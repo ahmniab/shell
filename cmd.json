@@ -1,5 +1,6 @@
 {
     "dir": "ls",
-    "cls": "clear"
+    "cls": "clear" ,
+    "cd" : "cd"
 
 }
