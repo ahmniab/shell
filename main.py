@@ -9,7 +9,7 @@ def invoke_commands(dos) :
         if params[0] == 'cd' :
             os.chdir(params[1])
         else :
-            subprocess.run([params] )
+            subprocess.run(params)
             
             
 
