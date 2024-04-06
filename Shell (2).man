@@ -1,0 +1,47 @@
+
+.TH SHELL 1 "April 2024" "Version 1.0" "Shell User Manual"
+.SH NAME
+dos_shell - Simulate a shell environment that translates DOS commands into their corresponding Linux commands.
+.SH SYNOPSIS
+.dos_shell
+.SH DESCRIPTION
+.The 'dos_shell' program provides a simulated shell environment capable of accepting DOS commands and executing them by translating them into their equivalent Linux commands. It functions by reading from a mapping file, dos_commands.txt, which contains pairs of DOS commands and their corresponding Linux counterparts. This utility serves as a learning tool for users familiar with DOS commands who wish to navigate and operate within a Linux environment.
+simulates a shell environment that accepts DOS commands
+and translates them into equivalent Linux commands, executing them and
+displaying the output (results) to the user.
+.SH OPTIONS
+No command line options are available.
+.SH USAGE
+Upon launching \fBshell\fR, users can input DOS commands, and the
+shell will translate these commands into corresponding Linux commands and
+execute them. The output of the executed Linux commands will be displayed
+to the user.
+.PP
+Users are required to provide a text file for mapping between DOS and Linux
+commands. Each line of the text file should contain a DOS command followed
+by its equivalent Linux command. The shell will reference this file for
+command translation.
+.SH EXAMPLES
+Suppose the mapping file contains the following entries:
+.nf
+.B dir    ls
+.B cls    clear
+.fi
+.PP
+If the user enters "dir" into the \fBshell\fR, the shell will execute
+"ls" command in Linux and display the directory listing.
+.PP
+If the user enters "cls" into the \fBshell\fR, the shell will execute
+"clear" command in Linux, clearing the screen.
+.SH FILES
+dos_commands.txt
+A text file containing mappings between DOS commands and their Linux equivalents. Users can customize this file to include additional mappings as needed.
+.SH AUTHOR
+[Ahmed Nabil].
+. SH REPORTING BUGS
+Please report any bugs or issues encountered with the dos_shell program to [ahmniab11@gmail.com].
+.SH BUGS
+There are currently no known bugs associated with the dos_shell program.
+.SH NOTES
+The 'dos_shell' utility is primarily intended for educational purposes and may not encompass the full spectrum of DOS commands and their Linux equivalents. Users are encouraged to contribute to the enhancement of this utility by extending the mapping file and sharing their additions with the community.
+
