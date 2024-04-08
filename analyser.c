@@ -71,26 +71,24 @@ void is_syntax_valid(){
 
 }
 
-void extract_lines(){
+void extract_lines(Mab *commands){
 
     Line line;
     FILE *conf_file = fopen(CONF, "r");
     is_syntax_valid(conf_file);
-    Mab commands ;
-    init_mab(&commands);
 
 
     while(!feof(conf_file))
     {
         fscanf(conf_file ,"%s %s ",line.dos , line.bash);
-        push(&commands,line.dos,line.bash);
+        push(commands,line.dos,line.bash);
     }
-    printf("%s\n",search(&commands ,"dir"));
+    printf("%s\n",search(commands ,"dir"));
 
     fclose(conf_file);
 }
 
-int main(){
-    extract_lines();
+// int main(){
+//     extract_lines();
 
-}
+// }

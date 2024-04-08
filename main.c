@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 #define MAX_LENGTH 1024
+
 int main() {
     char input[MAX_LENGTH];
     char path[MAX_LENGTH];
     char command[MAX_LENGTH];
+
     while (1) {
         printf("%s > ", getcwd(path, sizeof(path)));
         fflush(stdout);

@@ -1,0 +1,1 @@
+void handle_command(char *line,Mab *commands);

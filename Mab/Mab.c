@@ -21,7 +21,7 @@ Node* newNode(char* key, char* value) {
 }
 
 
-char* search(Mab *p_mab, char* key) {
+char* retreave(Mab *p_mab, char* key) {
     Node* temp = p_mab->head;
     while (temp != NULL) {
         if (strcmp(temp->key, key) == 0) {
@@ -42,6 +42,7 @@ void push(Mab *p_mab, char *key, char* value) {
         Node* new_node = newNode(key, value);
         new_node->next = p_mab->head;
         p_mab->head = new_node;
+        P_mab->sz++;
     }
 }
 
