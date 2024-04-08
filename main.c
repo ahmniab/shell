@@ -6,8 +6,7 @@ int main() {
     char path[MAX_LENGTH];
     char command[MAX_LENGTH];
     while (1) {
-        printf("Current Path: %s\n", getcwd(path, sizeof(path)));
-        printf("Enter a command: ");
+        printf("%s > ", getcwd(path, sizeof(path)));
         fflush(stdout);
         if (fgets(input, sizeof(input), stdin) == NULL) {
             printf("Error reading input.\n");
