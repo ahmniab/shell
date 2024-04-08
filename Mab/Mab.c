@@ -20,12 +20,6 @@ Node* newNode(char* key, char* value) {
     return new_node;
 }
 
-void push(Mab *p_mab, char* key, char* value) {
-
-    Node* new_node = newNode(key, value);
-    new_node->next = p_mab->head;
-    p_mab->head = new_node;
-}
 
 char* search(Mab *p_mab, char* key) {
     Node* temp = p_mab->head;
@@ -37,6 +31,20 @@ char* search(Mab *p_mab, char* key) {
     }
     return NULL;
 }
+void push(Mab *p_mab, char *key, char* value) {
+
+    char* check_node = search(p_mab, key);
+    if (check_node != NULL) {
+        printf("Error: Key already has a value.\n");
+        return;
+    }
+    else{
+        Node* new_node = newNode(key, value);
+        new_node->next = p_mab->head;
+        p_mab->head = new_node;
+    }
+}
+
 
 void printMab(Mab* P_mab) {
     Node *node = P_mab->head ;
@@ -45,3 +53,5 @@ void printMab(Mab* P_mab) {
         node = node->next;
     }
 }
+
+
