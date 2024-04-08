@@ -7,7 +7,7 @@ typedef struct Node{
 
     struct Node * next;
 } Node;
-typedef struct 
+typedef struct
 {
     unsigned long sz;
     Node *head ;
@@ -18,5 +18,5 @@ void push(Mab *p_mab, char* key, char* value);
 char* search(Mab *p_mab, char* key);
 void printMab(Mab* P_mab);
 void init_mab(Mab *p_mab);
-
+void distroy_mab(Mab *p_mab);
 #endif

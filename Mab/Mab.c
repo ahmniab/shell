@@ -54,4 +54,17 @@ void printMab(Mab* P_mab) {
     }
 }
 
+void distroy_mab(Mab *p_mab) {
+    Node *current = p_mab->head;
+    Node *next;
+
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+
+    p_mab->head = NULL;
+    p_mab->sz = 0;
+}
 

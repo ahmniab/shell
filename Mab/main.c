@@ -11,8 +11,9 @@ int main()
     push(&mab , "llll" , "ahmed nabil") ;
     push(&mab , "fff" , "ahmed nabil") ;
     push(&mab , "kdmvkdsn" , "ahmed nabil") ;
+    distroy_mab(&mab);
     printMab(&mab);
-    printf("%s\n", search(&mab, "ahmniab"));
+   // printf("%s\n", search(&mab, "ahmniab"));
 
 
     return 0;
