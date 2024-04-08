@@ -4,28 +4,15 @@
 
 int main()
 {
-        Node* head = NULL;
-
-
-    push(&head, "two", "2");
-    push(&head, "one", "1");
-
-
-    push(&head, "four", "4");
-    push(&head, "three", "3");
-
-
-    printf("Linked List: \n");
-    printList(head);
-
-    char* value = search(head, "one");
-    if (value) {
-        printf("\nValue of key 'one': %s\n", value);
-    } else {
-        printf("\nKey '6' not found.\n");
-    }
-
-
+    Mab mab;
+    init_mab(&mab);
+    push(&mab , "ahmniab" , "ahmed nabil") ;
+    push(&mab , "kkk" , "ahmed nabil") ;
+    push(&mab , "llll" , "ahmed nabil") ;
+    push(&mab , "fff" , "ahmed nabil") ;
+    push(&mab , "kdmvkdsn" , "ahmed nabil") ;
+    printMab(&mab);
+    printf("%s\n", search(&mab, "ahmniab"));
 
 
     return 0;

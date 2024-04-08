@@ -1,6 +1,12 @@
 #include "Mab.h"
 #include <stdio.h>
 #include<stdlib.h>
+#include<string.h>
+
+void init_mab(Mab *p_mab){
+    p_mab->sz = 0 ;
+    p_mab->head = NULL;
+}
 
 Node* newNode(char* key, char* value) {
     Node* new_node = (Node*) malloc(sizeof(Node));
@@ -14,14 +20,15 @@ Node* newNode(char* key, char* value) {
     return new_node;
 }
 
-void push(Node** head, char* key, char* value) {
+void push(Mab *p_mab, char* key, char* value) {
+
     Node* new_node = newNode(key, value);
-    new_node->next = *head;
-    *head = new_node;
+    new_node->next = p_mab->head;
+    p_mab->head = new_node;
 }
 
-char* search(Node* head, char* key) {
-    Node* temp = head;
+char* search(Mab *p_mab, char* key) {
+    Node* temp = p_mab->head;
     while (temp != NULL) {
         if (strcmp(temp->key, key) == 0) {
             return temp->value;
@@ -31,7 +38,8 @@ char* search(Node* head, char* key) {
     return NULL;
 }
 
-void printList(Node* node) {
+void printMab(Mab* P_mab) {
+    Node *node = P_mab->head ;
     while (node != NULL) {
         printf("Key: %s, Value: %s\n", node->key, node->value);
         node = node->next;
