@@ -1,11 +1,19 @@
 #include <stdio.h>
 #include <string.h>
+#include "Mab/Mab.h"
+#include "invoke.h"
+#include "analyser.h"
+
 #define MAX_LENGTH 1024
 
 int main() {
     char input[MAX_LENGTH];
     char path[MAX_LENGTH];
     char command[MAX_LENGTH];
+
+    Mab commands;
+    init_mab(&commands);
+    extract_lines(&commands);
 
     while (1) {
         printf("%s > ", getcwd(path, sizeof(path)));
@@ -19,7 +27,7 @@ int main() {
             printf("Exiting...\n");
             break;
         }
-        printf("Command entered: %s\n", input);
+        handle_command(input , &commands);
     }
     return 0;
 }

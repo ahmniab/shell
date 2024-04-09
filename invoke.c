@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include "Mab/Mab.h"
 #include "analyser.h"
+
+
 
 char *strstrip(char *s)
 {
@@ -34,12 +37,15 @@ void handle_command(char *line,Mab *commands){
     strtok(cpy, " ");
 
     char *key = strstrip(cpy);
+    // printf("key =%s\nline =%s\nstr = %d\ndir = %s\n",key,line , strcmp(key, "cd"),line + strlen(cpy));
+    /*printf("len = %zu\n",strlen("cd"));*/
     if (!strcmp(key,"exit")){
         distroy_mab(commands);
         exit(0);
-    }else if (!strcpy(key , "cd"))
+    }else if (!strcmp(key, "cd"))
     {
-        chdir(line + len(cpy));
+        chdir(line + strlen(cpy) + 1);
+        return;
     }
     
 
@@ -53,8 +59,5 @@ void handle_command(char *line,Mab *commands){
         system(line);
     }
     
-    
-    
-    
-    
 }
+
