@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1712610761 source:f:\gmy\os\shell\mab\mab.c
-	"Mab.h"
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
-1712610751 f:\gmy\os\shell\mab\mab.h
-
