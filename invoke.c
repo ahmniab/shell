@@ -44,6 +44,7 @@ void handle_command(char *line,Mab *commands){
         exit(0);
     }else if (!strcmp(key, "cd"))
     {
+        
         chdir(line + strlen(cpy) + 1);
         return;
     }
@@ -52,11 +53,14 @@ void handle_command(char *line,Mab *commands){
     char *value = retreave(commands , key);
     if (value == NULL)
     {
-        fprintf(stderr,"Invalid command ");
+        fprintf(stderr,"Invalid command \n");
         return;
     }
     else {
-        system(line);
+        strcpy(cpy,value);
+        strcat(cpy , " ");
+        strcat(cpy,line + strlen(cpy) + 1);
+        system(cpy);
     }
     
 }

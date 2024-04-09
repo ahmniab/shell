@@ -33,7 +33,7 @@ char* retreave(Mab *p_mab, char* key) {
 }
 void push(Mab *p_mab, char *key, char* value) {
 
-    char* check_node = search(p_mab, key);
+    char* check_node = retreave(p_mab, key);
     if (check_node != NULL) {
         printf("Error: Key already has a value.\n");
         return;
@@ -42,7 +42,7 @@ void push(Mab *p_mab, char *key, char* value) {
         Node* new_node = newNode(key, value);
         new_node->next = p_mab->head;
         p_mab->head = new_node;
-        P_mab->sz++;
+        p_mab->sz++;
     }
 }
 

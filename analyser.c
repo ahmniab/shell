@@ -83,7 +83,7 @@ void extract_lines(Mab *commands){
         fscanf(conf_file ,"%s %s ",line.dos , line.bash);
         push(commands,line.dos,line.bash);
     }
-    printf("%s\n",search(commands ,"dir"));
+    //printf("%s\n",search(commands ,"dir"));
 
     fclose(conf_file);
 }
