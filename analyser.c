@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include "Mab/Mab.h"
 
-#define close do(goto close;);
-#define CONF "conf/cmd.conf"
+
+#define CONF "/etc/shell.conf"
 
 typedef struct
 {
