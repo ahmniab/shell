@@ -28,15 +28,32 @@ char *strstrip(char *s)
     return s;
 }
 
+void get_command(const char * src , char *cmd){
+    char started = 0;
+    int i ;
+    for (i = 0; 1; ++i) {
+        if(!started && src[i] == ' '){
+            continue;
+        }
+        if(started && src[i] == ' '){
+            break;
+        }
+        started = 1;
+        *cmd = src[i];
+        cmd++;
+
+    }
+    *cmd = 0;
+}
 
 
 void handle_command(char *line,Mab *commands){
     
     char cpy[1024] ;
-    strcpy(cpy,line);
-    strtok(cpy, " ");
 
-    char *key = strstrip(cpy);
+    char key[1024] ;
+    get_command(line,key);
+    //printf("%s\n",key);
     // printf("key =%s\nline =%s\nstr = %d\ndir = %s\n",key,line , strcmp(key, "cd"),line + strlen(cpy));
     /*printf("len = %zu\n",strlen("cd"));*/
     if (!strcmp(key,"exit")){
@@ -44,8 +61,7 @@ void handle_command(char *line,Mab *commands){
         exit(0);
     }else if (!strcmp(key, "cd"))
     {
-        
-        chdir(line + strlen(cpy) + 1);
+        chdir(line + strlen(key) + 1);
         return;
     }
     
@@ -59,7 +75,8 @@ void handle_command(char *line,Mab *commands){
     else {
         strcpy(cpy,value);
         strcat(cpy , " ");
-        strcat(cpy,line + strlen(cpy) + 1);
+        strcat(cpy,line + strlen(key) + 1);
+        //printf("%s\n",cpy);
         system(cpy);
     }
     
